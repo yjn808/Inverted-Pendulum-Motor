@@ -27,11 +27,11 @@ void CAN_Init(void)
     //4.CAN初始化配置
     //4.1 进入初始化模式
     CAN1->MCR |=CAN_MCR_INRQ;
-    while((CAN1->MSR & CAN_MSR_INAK) == 0); {}//等待进入初始化模式
+    while((CAN1->MSR & CAN_MSR_INAK) == 0){}//等待进入初始化模式
     
     //4.2退出睡眠模式
     CAN1->MCR &=~CAN_MCR_SLEEP;
-    while((CAN1->MSR & CAN_MSR_SLAK) != 0); {}
+    while((CAN1->MSR & CAN_MSR_SLAK) != 0){}
 
     //4.3自动离线管理
     CAN1->MCR |= CAN_MCR_ABOM;
@@ -39,8 +39,8 @@ void CAN_Init(void)
     //4.4自动唤醒管理
     CAN1->MCR |= CAN_MCR_AWUM;
 
-    //4.5配置环回静默测试模式
-    CAN1->BTR |= CAN_BTR_LBKM | CAN_BTR_SILM;
+//    //4.5配置环回静默测试模式
+//    CAN1->BTR |= CAN_BTR_LBKM | CAN_BTR_SILM;
 
     //4.6配置位时序
     //4.6.1 配置波特率分频器，36分频，Tq=1us
@@ -57,7 +57,39 @@ void CAN_Init(void)
 
     //4.7退出初始化模式
     CAN1->MCR &= ~CAN_MCR_INRQ;
-    while((CAN1->MSR & CAN_MSR_INAK) != 0);{}
+    while((CAN1->MSR & CAN_MSR_INAK) != 0){}
+
+    //5.配置过滤器
+    CAN_ConfigFilter();
+
+}
+
+//定义静态函数，进行过滤器配置
+static void CAN_ConfigFilter(void)
+{
+    //1.进入过滤器初始化模式
+    CAN1->FMR |= CAN_FMR_FINIT;
+
+    //2.配置过滤器工作模式：0 - 屏蔽位工作模式
+    CAN1->FM1R &= ~CAN_FM1R_FBM0;
+
+    //3.配置位宽：1 - 32位
+    CAN1->FS1R |= CAN_FS1R_FSC0;
+
+    //4.设置关联的FIFO:FIFO0
+    CAN1->FFA1R &= ~CAN_FFA1R_FFA0;
+
+    //5.设置过滤器组0的ID寄存器：FR1
+    CAN1->sFilterRegister[0].FR1 = 0x06e << 21; //接收所有ID的报文
+    
+    //6.设置过滤器组0的掩码寄存器：FR2
+    CAN1->sFilterRegister[0].FR2 = 0x00;
+
+    //7.激活过滤器组0
+    CAN1->FA1R |= CAN_FA1R_FACT0;
+
+    //8.退出初始化模式
+    CAN1->FMR &= ~CAN_FMR_FINIT;
 }
 
 
@@ -65,7 +97,7 @@ void CAN_Init(void)
 void CAN_SendMessage(uint16_t id,uint8_t *data,uint8_t len)
 {
     //1.等待发送邮箱为空
-    while((CAN1->TSR & CAN_TSR_TME0)==0);{}
+    while((CAN1->TSR & CAN_TSR_TME0)==0){}
 
     //2.包装要发送的数据帧
     //2.1设置标准ID
@@ -107,7 +139,7 @@ void CAN_SendMessage(uint16_t id,uint8_t *data,uint8_t len)
     CAN1->sTxMailBox[0].TIR |= CAN_TI0R_TXRQ;
 
     //4.等待发送完成
-    while((CAN1->TSR & CAN_TSR_TXOK0)==0);{}
+    while((CAN1->TSR & CAN_TSR_TXOK0)==0){}
 
 
 
@@ -135,6 +167,8 @@ void CAN_ReceiveMsg(RxMsg *msgArray,uint8_t *msgCount)
     //2.3读取数据
     uint32_t dataLow = CAN1->sFIFOMailBox[0].RDLR;
     uint32_t dataHigh = CAN1->sFIFOMailBox[0].RDHR;
+
+
     for(uint8_t j=0;j<msg->len;j++)
     {
         if(j<4)
@@ -153,6 +187,9 @@ void CAN_ReceiveMsg(RxMsg *msgArray,uint8_t *msgCount)
    }
 
 }
+
+
+
 
 
 

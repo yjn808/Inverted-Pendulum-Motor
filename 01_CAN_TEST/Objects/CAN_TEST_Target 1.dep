@@ -1,0 +1,56 @@
+Dependencies for Project 'CAN_TEST', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\Start\core_cm3.c)(0x615FF1D6)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+F (.\Start\core_cm3.h)(0x615FF1D6)()
+F (.\Start\startup_stm32f10x_hd.s)(0x615FF1D6)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 539" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o .\objects\startup_stm32f10x_hd.o --depend .\objects\startup_stm32f10x_hd.d)
+F (.\Start\stm32f10x.h)(0x66EBD22C)()
+F (.\Start\system_stm32f10x.c)(0x615FF1D6)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+I (Start\stm32f10x.h)(0x66EBD22C)
+I (Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (Start\system_stm32f10x.h)(0x615FF1D6)
+F (.\Start\system_stm32f10x.h)(0x615FF1D6)()
+F (.\User\main.c)(0x69E8C69F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Hardware\USART\usart.h)(0x66EE7609)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (User\delay.h)(0x66EA2B38)
+I (.\Hardware\CAN\can.h)(0x69E88C9A)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+F (.\User\delay.c)(0x67346C8D)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (User\delay.h)(0x66EA2B38)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)
+F (.\Hardware\LED\led.c)(0x66EA2EFA)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (Hardware\LED\led.h)(0x66EA2E89)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)
+F (.\Hardware\KEY\key.c)(0x66EBD75E)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\key.o --omf_browse .\objects\key.crf --depend .\objects\key.d)
+I (Hardware\KEY\key.h)(0x66EBD113)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)
+I (.\User\delay.h)(0x66EA2B38)
+I (.\Hardware\LED\led.h)(0x66EA2E89)
+F (.\Hardware\USART\usart.c)(0x66EE7630)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+I (Hardware\USART\usart.h)(0x66EE7609)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+F (.\Hardware\CAN\can.c)(0x69E8C69F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\CAN-ID:\Users\yjn\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -DSTM32F10X_HD-o .\objects\can.o --omf_browse .\objects\can.crf --depend .\objects\can.d)
+I (Hardware\CAN\can.h)(0x69E88C9A)
+I (.\Start\stm32f10x.h)(0x66EBD22C)
+I (.\Start\core_cm3.h)(0x615FF1D6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\Start\system_stm32f10x.h)(0x615FF1D6)

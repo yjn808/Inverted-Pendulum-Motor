@@ -1,0 +1,5 @@
+Load "02_can_test_hal\\02_can_test_hal.axf" 
+_____^
+*** error 56: cannot open file
+Error: Flash Download failed  -  Could not load file '02_can_test_hal\02_can_test_hal.axf'
+Flash Load finished at 20:40:35

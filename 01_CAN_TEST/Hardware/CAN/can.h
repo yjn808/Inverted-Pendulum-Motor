@@ -15,7 +15,9 @@ typedef struct
 //初始化
 
 void CAN_Init(void);
+static void CAN_ConfigFilter(void);
 void CAN_SendMessage(uint16_t id,uint8_t *data,uint8_t len);
+void CAN_ReceiveMsg(RxMsg *msgArray,uint8_t *msgCount);
 
 
 
